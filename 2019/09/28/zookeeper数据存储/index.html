@@ -10,19 +10,19 @@
 <title>zookeeper数据存储 - Aissue</title>
 
 
-    <meta name="description" content="前言&amp;emsp;&amp;emsp;一次公司故障，怀疑zk版本问题，决定重装zk。由于之前zk安装的不规范性，所以本次按照公司规范，重新安装成功。重启后发现zk数据丢失… [悲伤脸]&amp;emsp;&amp;emsp;虽然有zk节点迁移的工具类，但是面对那么多的数据，如此迁移必然效率低下，怎么办？zk一定有快速实现数据迁移的方法，众里寻他千百度，果然如此… [开心脸] zk的数据与存储 内存数据&amp;emsp;1. Da">
+    <meta name="description" content="前言&amp;emsp;&amp;emsp;一次公司故障，怀疑zk版本问题，决定重装zk。由于之前zk安装的不规范性，所以本次按照公司规范，重新安装成功。重启后发现zk数据丢失… [悲伤脸]&amp;emsp;&amp;emsp;虽然有zk节点迁移的工具类，但是面对那么多的数据，如此迁移必然效率低下，怎么办？zk一定有快速实现数据迁移的方法，众里寻他千百度，果然如此… [开心脸]">
 <meta name="keywords" content="zookeeper">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zookeeper数据存储">
 <meta property="og:url" content="http://yoursite.com/2019/09/28/zookeeper数据存储/index.html">
 <meta property="og:site_name" content="Aissue">
-<meta property="og:description" content="前言&amp;emsp;&amp;emsp;一次公司故障，怀疑zk版本问题，决定重装zk。由于之前zk安装的不规范性，所以本次按照公司规范，重新安装成功。重启后发现zk数据丢失… [悲伤脸]&amp;emsp;&amp;emsp;虽然有zk节点迁移的工具类，但是面对那么多的数据，如此迁移必然效率低下，怎么办？zk一定有快速实现数据迁移的方法，众里寻他千百度，果然如此… [开心脸] zk的数据与存储 内存数据&amp;emsp;1. Da">
+<meta property="og:description" content="前言&amp;emsp;&amp;emsp;一次公司故障，怀疑zk版本问题，决定重装zk。由于之前zk安装的不规范性，所以本次按照公司规范，重新安装成功。重启后发现zk数据丢失… [悲伤脸]&amp;emsp;&amp;emsp;虽然有zk节点迁移的工具类，但是面对那么多的数据，如此迁移必然效率低下，怎么办？zk一定有快速实现数据迁移的方法，众里寻他千百度，果然如此… [开心脸]">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/thumbnails/dog.jpg">
-<meta property="og:updated_time" content="2019-09-28T04:26:55.725Z">
+<meta property="og:updated_time" content="2019-09-28T05:49:48.407Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zookeeper数据存储">
-<meta name="twitter:description" content="前言&amp;emsp;&amp;emsp;一次公司故障，怀疑zk版本问题，决定重装zk。由于之前zk安装的不规范性，所以本次按照公司规范，重新安装成功。重启后发现zk数据丢失… [悲伤脸]&amp;emsp;&amp;emsp;虽然有zk节点迁移的工具类，但是面对那么多的数据，如此迁移必然效率低下，怎么办？zk一定有快速实现数据迁移的方法，众里寻他千百度，果然如此… [开心脸] zk的数据与存储 内存数据&amp;emsp;1. Da">
+<meta name="twitter:description" content="前言&amp;emsp;&amp;emsp;一次公司故障，怀疑zk版本问题，决定重装zk。由于之前zk安装的不规范性，所以本次按照公司规范，重新安装成功。重启后发现zk数据丢失… [悲伤脸]&amp;emsp;&amp;emsp;虽然有zk节点迁移的工具类，但是面对那么多的数据，如此迁移必然效率低下，怎么办？zk一定有快速实现数据迁移的方法，众里寻他千百度，果然如此… [开心脸]">
 <meta name="twitter:image" content="http://yoursite.com/thumbnails/dog.jpg">
 
 
@@ -176,9 +176,10 @@
         </h1>
         <div class="content">
             <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&emsp;&emsp;一次公司故障，怀疑zk版本问题，决定重装zk。由于之前zk安装的不规范性，所以本次按照公司规范，重新安装成功。重启后发现zk数据丢失… [悲伤脸]<br>&emsp;&emsp;虽然有zk节点迁移的工具类，但是面对那么多的数据，如此迁移必然效率低下，怎么办？zk一定有快速实现数据迁移的方法，众里寻他千百度，果然如此… [开心脸]</p>
+<a id="more"></a>
 <h3 id="zk的数据与存储"><a href="#zk的数据与存储" class="headerlink" title="zk的数据与存储"></a>zk的数据与存储</h3><ul>
 <li><p>内存数据<br>&emsp;1. <strong>DataTree</strong><br>&emsp;&emsp;DataTree是内存数据存储的核心，是一个树结构，<strong>代表了内存中一份完整的数据</strong>。DataTree不包含任何与网络、客户端连接及请求处理相关的业务逻辑，是一个独立的组件。<br>&emsp;2. <strong>DataNode</strong><br>&emsp;&emsp;DataNode是数据存储的<strong>最小单元</strong>，其内部除了保存了结点的数据内容、ACL列表、节点状态之外，还记录了父节点的引用和子节点列表两个属性，其也提供了对子节点列表进行操作的接口。<br>&emsp;3. <strong>ZKDatabase</strong><br>&emsp;&emsp;Zookeeper的<strong>内存数据库</strong>，管理Zookeeper的所有会话、DataTree存储和事务日志。ZKDatabase会定时向磁盘<strong>dump快照数据</strong>，同时在Zookeeper启动时，会通过磁盘的事务日志和快照文件恢复成一个完整的内存数据库。</p>
-<a id="more"></a></li>
+</li>
 <li><p>事务日志<br>&emsp;1. <strong>文件存储</strong><br>&emsp;&emsp;在配置Zookeeper集群时需要配置dataDir目录，其用来存储事务日志文件。也可以为事务日志单独分配一个文件存储目录:dataLogDir。若配置dataLogDir为/home/admin/zkData/zk_log，那么Zookeeper在运行过程中会在该目录下建立一个名字为version-2的子目录，该目录确定了当前Zookeeper使用的事务日志格式版本号，当下次某个Zookeeper版本对事务日志格式进行变更时，此目录也会变更，即在version-2子目录下会生成一系列文件大小一致(64MB)的文件。</p>
 </li>
 <li><p>数据快照<br>&emsp;&emsp;数据快照是Zookeeper数据存储中非常核心的运行机制，数据快照用来记录Zookeeper服务器上某一时刻的全量内存数据内容，并将其写入指定的磁盘文件中。<br>&emsp;1. <strong>文件存储</strong><br>&emsp;&emsp;与事务文件类似，Zookeeper快照文件也可以指定特定磁盘目录，通过dataDir属性来配置。若指定dataDir为/home/admin/zkData/zk_data，则在运行过程中会在该目录下创建version-2的目录，该目录确定了当前Zookeeper使用的快照数据格式版本号。在Zookeeper运行时，会生成一系列文件。</p>

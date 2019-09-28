@@ -181,8 +181,6 @@
         </h1>
         <div class="content">
             <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&emsp;&emsp;一次公司故障，怀疑zk版本问题，决定重装zk。由于之前zk安装的不规范性，所以本次按照公司规范，重新安装成功。重启后发现zk数据丢失… [悲伤脸]<br>&emsp;&emsp;虽然有zk节点迁移的工具类，但是面对那么多的数据，如此迁移必然效率低下，怎么办？zk一定有快速实现数据迁移的方法，众里寻他千百度，果然如此… [开心脸]</p>
-<h3 id="zk的数据与存储"><a href="#zk的数据与存储" class="headerlink" title="zk的数据与存储"></a>zk的数据与存储</h3><ul>
-<li><p>内存数据<br>&emsp;1. <strong>DataTree</strong><br>&emsp;&emsp;DataTree是内存数据存储的核心，是一个树结构，<strong>代表了内存中一份完整的数据</strong>。DataTree不包含任何与网络、客户端连接及请求处理相关的业务逻辑，是一个独立的组件。<br>&emsp;2. <strong>DataNode</strong><br>&emsp;&emsp;DataNode是数据存储的<strong>最小单元</strong>，其内部除了保存了结点的数据内容、ACL列表、节点状态之外，还记录了父节点的引用和子节点列表两个属性，其也提供了对子节点列表进行操作的接口。<br>&emsp;3. <strong>ZKDatabase</strong><br>&emsp;&emsp;Zookeeper的<strong>内存数据库</strong>，管理Zookeeper的所有会话、DataTree存储和事务日志。ZKDatabase会定时向磁盘<strong>dump快照数据</strong>，同时在Zookeeper启动时，会通过磁盘的事务日志和快照文件恢复成一个完整的内存数据库。</p></li></ul>
         </div>
         
         
@@ -241,18 +239,6 @@
         </h1>
         <div class="content">
             <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>下载 zookeeper-3.4.10.tar.gz，传送带===&gt;<a href="http://apache.fayea.com/zookeeper/" title="zookeeper-3.4.10" target="_blank" rel="noopener">zookeeper-3.4.10</a><br>(ps：其他版本按照同样的安装步骤进行即可)</p>
-<h3 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h3><ol>
-<li><p>创建安装目录：</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir -p /usr/<span class="hljs-built_in">local</span>/zookeeper</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将安装包放到步骤1创建的目录下，并解压：</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar -zxvf zookeeper-3.4.10.tar.gz</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>进入配置文件目录，并依次执行以下shell命令行：</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">cd</span> zookeeper-3.4.10/conf/</span><br><span class="line">$ cp zoo_sample.cfg zoo.cfg</span><br><span class="line">$ vim zoo.cfg</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
         </div>
         
         
