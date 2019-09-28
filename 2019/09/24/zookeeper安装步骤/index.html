@@ -19,7 +19,7 @@
 <meta property="og:description" content="准备工作下载 zookeeper-3.4.10.tar.gz，传送带===&amp;gt;zookeeper-3.4.10(ps：其他版本按照同样的安装步骤进行即可) 开始安装 创建安装目录： 1$ mkdir -p /usr/local/zookeeper  将安装包放到步骤1创建的目录下，并解压： 1$ tar -zxvf zookeeper-3.4.10.tar.gz  进入配置文件目录，并依次执行">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/thumbnails/fish.jpg">
-<meta property="og:updated_time" content="2019-09-28T01:35:39.482Z">
+<meta property="og:updated_time" content="2019-09-28T02:52:28.470Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zookeeper在CentOS7上的安装步骤">
 <meta name="twitter:description" content="准备工作下载 zookeeper-3.4.10.tar.gz，传送带===&amp;gt;zookeeper-3.4.10(ps：其他版本按照同样的安装步骤进行即可) 开始安装 创建安装目录： 1$ mkdir -p /usr/local/zookeeper  将安装包放到步骤1创建的目录下，并解压： 1$ tar -zxvf zookeeper-3.4.10.tar.gz  进入配置文件目录，并依次执行">
@@ -157,7 +157,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 559 个字)
+                    5 分钟 读完 (大约 703 个字)
                 </span>
                 
                 
@@ -218,6 +218,27 @@
 <p>关闭服务：</p>
 <figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ./ zkServer.sh stop</span></span><br></pre></td></tr></table></figure>
 
+<p>重启服务：</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ./ zkServer.sh restart</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="zookeeper-cli命令行补充"><a href="#zookeeper-cli命令行补充" class="headerlink" title="zookeeper-cli命令行补充"></a>zookeeper-cli命令行补充</h3><ol>
+<li><p>连接zk：</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ./ zkCli.sh -server 127.0.0.1:2181</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示根目录下文件</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ls /      <span class="hljs-comment">#查看当前节点数据</span></span></span><br><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ls2 /     <span class="hljs-comment">#查看当前节点数据，可以看到更新次数等数据</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建文件</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> create /config <span class="hljs-string">"test"</span>     <span class="hljs-comment">#创建一个新的节点并设置关联值</span></span></span><br><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> create /config <span class="hljs-string">""</span>         <span class="hljs-comment">#创建一个新的空节点</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取/设置文件内容</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> get /brokers              <span class="hljs-comment">#获取节点内容</span></span></span><br><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> <span class="hljs-built_in">set</span> /zk <span class="hljs-string">"zkData"</span>          <span class="hljs-comment">#设置zk文件内容</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除文件</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> delete /brokers           <span class="hljs-comment">#删除节点</span></span></span><br><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> rmr    /brokers           <span class="hljs-comment">#删除节点及子节点</span></span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
 <p>到此为止zookeeper服务已经安装完毕，请开始zookeeper分布式注册之旅吧…[手工笑脸]</p>
 
         </div>
