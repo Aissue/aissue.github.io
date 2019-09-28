@@ -7,23 +7,23 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>zookeeper在CentOS7上的安装步骤 - Aissue</title>
+<title>zookeeper数据存储 - Aissue</title>
 
 
-    <meta name="description" content="准备工作下载 zookeeper-3.4.10.tar.gz，传送带===&amp;gt;zookeeper-3.4.10(ps：其他版本按照同样的安装步骤进行即可) 开始安装 创建安装目录： 1$ mkdir -p /usr/local/zookeeper  将安装包放到步骤1创建的目录下，并解压： 1$ tar -zxvf zookeeper-3.4.10.tar.gz  进入配置文件目录，并依次执行">
+    <meta name="description" content="前言&amp;emsp;&amp;emsp;一次公司故障，怀疑zk版本问题，决定重装zk。由于之前zk安装的不规范性，所以本次按照公司规范，重新安装成功。重启后发现zk数据丢失…:fa-frown-o:&amp;emsp;&amp;emsp;虽然有zk节点迁移的工具类，但是面对那么多的数据，如此迁移必然效率低下，怎么办？zk一定有快速实现数据迁移的方法，众里寻他千百度，果然如此…:fa-angellist: zk的数据与存储 内">
 <meta name="keywords" content="zookeeper">
 <meta property="og:type" content="article">
-<meta property="og:title" content="zookeeper在CentOS7上的安装步骤">
-<meta property="og:url" content="http://yoursite.com/2019/09/24/zookeeper安装步骤/index.html">
+<meta property="og:title" content="zookeeper数据存储">
+<meta property="og:url" content="http://yoursite.com/2019/09/28/zookeeper数据存储/index.html">
 <meta property="og:site_name" content="Aissue">
-<meta property="og:description" content="准备工作下载 zookeeper-3.4.10.tar.gz，传送带===&amp;gt;zookeeper-3.4.10(ps：其他版本按照同样的安装步骤进行即可) 开始安装 创建安装目录： 1$ mkdir -p /usr/local/zookeeper  将安装包放到步骤1创建的目录下，并解压： 1$ tar -zxvf zookeeper-3.4.10.tar.gz  进入配置文件目录，并依次执行">
+<meta property="og:description" content="前言&amp;emsp;&amp;emsp;一次公司故障，怀疑zk版本问题，决定重装zk。由于之前zk安装的不规范性，所以本次按照公司规范，重新安装成功。重启后发现zk数据丢失…:fa-frown-o:&amp;emsp;&amp;emsp;虽然有zk节点迁移的工具类，但是面对那么多的数据，如此迁移必然效率低下，怎么办？zk一定有快速实现数据迁移的方法，众里寻他千百度，果然如此…:fa-angellist: zk的数据与存储 内">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/thumbnails/fish.jpg">
-<meta property="og:updated_time" content="2019-09-28T03:17:49.192Z">
+<meta property="og:image" content="http://yoursite.com/thumbnails/dog.jpg">
+<meta property="og:updated_time" content="2019-09-28T04:14:53.193Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zookeeper在CentOS7上的安装步骤">
-<meta name="twitter:description" content="准备工作下载 zookeeper-3.4.10.tar.gz，传送带===&amp;gt;zookeeper-3.4.10(ps：其他版本按照同样的安装步骤进行即可) 开始安装 创建安装目录： 1$ mkdir -p /usr/local/zookeeper  将安装包放到步骤1创建的目录下，并解压： 1$ tar -zxvf zookeeper-3.4.10.tar.gz  进入配置文件目录，并依次执行">
-<meta name="twitter:image" content="http://yoursite.com/thumbnails/fish.jpg">
+<meta name="twitter:title" content="zookeeper数据存储">
+<meta name="twitter:description" content="前言&amp;emsp;&amp;emsp;一次公司故障，怀疑zk版本问题，决定重装zk。由于之前zk安装的不规范性，所以本次按照公司规范，重新安装成功。重启后发现zk数据丢失…:fa-frown-o:&amp;emsp;&amp;emsp;虽然有zk节点迁移的工具类，但是面对那么多的数据，如此迁移必然效率低下，怎么办？zk一定有快速实现数据迁移的方法，众里寻他千百度，果然如此…:fa-angellist: zk的数据与存储 内">
+<meta name="twitter:image" content="http://yoursite.com/thumbnails/dog.jpg">
 
 
 
@@ -97,7 +97,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.jpg" alt="zookeeper在CentOS7上的安装步骤" height="28">
+                <img src="/images/logo.jpg" alt="zookeeper数据存储" height="28">
             
             </a>
         </div>
@@ -139,7 +139,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/thumbnails/fish.jpg" alt="zookeeper在CentOS7上的安装步骤">
+            <img class="thumbnail" src="/thumbnails/dog.jpg" alt="zookeeper数据存储">
         </span>
     </div>
     
@@ -147,7 +147,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-09-24T07:25:15.332Z">2019-09-24</time>
+                <time class="level-item has-text-grey" datetime="2019-09-28T03:52:45.094Z">2019-09-28</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/中间件/">中间件</a>
@@ -157,7 +157,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 分钟 读完 (大约 703 个字)
+                    7 分钟 读完 (大约 1019 个字)
                 </span>
                 
                 
@@ -171,76 +171,27 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                zookeeper在CentOS7上的安装步骤
+                zookeeper数据存储
             
         </h1>
         <div class="content">
-            <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>下载 zookeeper-3.4.10.tar.gz，传送带===&gt;<a href="http://apache.fayea.com/zookeeper/" title="zookeeper-3.4.10" target="_blank" rel="noopener">zookeeper-3.4.10</a><br>(ps：其他版本按照同样的安装步骤进行即可)</p>
-<h3 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h3><ol>
-<li><p>创建安装目录：</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir -p /usr/<span class="hljs-built_in">local</span>/zookeeper</span><br></pre></td></tr></table></figure>
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&emsp;&emsp;一次公司故障，怀疑zk版本问题，决定重装zk。由于之前zk安装的不规范性，所以本次按照公司规范，重新安装成功。重启后发现zk数据丢失…:fa-frown-o:<br>&emsp;&emsp;虽然有zk节点迁移的工具类，但是面对那么多的数据，如此迁移必然效率低下，怎么办？zk一定有快速实现数据迁移的方法，众里寻他千百度，果然如此…:fa-angellist:</p>
+<h3 id="zk的数据与存储"><a href="#zk的数据与存储" class="headerlink" title="zk的数据与存储"></a>zk的数据与存储</h3><ul>
+<li><p>内存数据<br>&emsp;1. <strong>DataTree</strong><br>&emsp;&emsp;DataTree是内存数据存储的核心，是一个树结构，<strong>代表了内存中一份完整的数据</strong>。DataTree不包含任何与网络、客户端连接及请求处理相关的业务逻辑，是一个独立的组件。<br>&emsp;2. <strong>DataNode</strong><br>&emsp;&emsp;DataNode是数据存储的<strong>最小单元</strong>，其内部除了保存了结点的数据内容、ACL列表、节点状态之外，还记录了父节点的引用和子节点列表两个属性，其也提供了对子节点列表进行操作的接口。<br>&emsp;3. <strong>ZKDatabase</strong><br>&emsp;&emsp;Zookeeper的<strong>内存数据库</strong>，管理Zookeeper的所有会话、DataTree存储和事务日志。ZKDatabase会定时向磁盘<strong>dump快照数据</strong>，同时在Zookeeper启动时，会通过磁盘的事务日志和快照文件恢复成一个完整的内存数据库。</p>
+<a id="more"></a></li>
+<li><p>事务日志<br>&emsp;1. <strong>文件存储</strong><br>&emsp;&emsp;在配置Zookeeper集群时需要配置dataDir目录，其用来存储事务日志文件。也可以为事务日志单独分配一个文件存储目录:dataLogDir。若配置dataLogDir为/home/admin/zkData/zk_log，那么Zookeeper在运行过程中会在该目录下建立一个名字为version-2的子目录，该目录确定了当前Zookeeper使用的事务日志格式版本号，当下次某个Zookeeper版本对事务日志格式进行变更时，此目录也会变更，即在version-2子目录下会生成一系列文件大小一致(64MB)的文件。</p>
 </li>
-<li><p>将安装包放到步骤1创建的目录下，并解压：</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar -zxvf zookeeper-3.4.10.tar.gz</span><br></pre></td></tr></table></figure>
+<li><p>数据快照<br>&emsp;&emsp;数据快照是Zookeeper数据存储中非常核心的运行机制，数据快照用来记录Zookeeper服务器上某一时刻的全量内存数据内容，并将其写入指定的磁盘文件中。<br>&emsp;1. <strong>文件存储</strong><br>&emsp;&emsp;与事务文件类似，Zookeeper快照文件也可以指定特定磁盘目录，通过dataDir属性来配置。若指定dataDir为/home/admin/zkData/zk_data，则在运行过程中会在该目录下创建version-2的目录，该目录确定了当前Zookeeper使用的快照数据格式版本号。在Zookeeper运行时，会生成一系列文件。</p>
 </li>
-<li><p>进入配置文件目录，并依次执行以下shell命令行：</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">cd</span> zookeeper-3.4.10/conf/</span><br><span class="line">$ cp zoo_sample.cfg zoo.cfg</span><br><span class="line">$ vim zoo.cfg</span><br></pre></td></tr></table></figure>
-
+</ul>
+<h3 id="zk启动时的数据初始化"><a href="#zk启动时的数据初始化" class="headerlink" title="zk启动时的数据初始化"></a>zk启动时的数据初始化</h3><p>&emsp;&emsp;在Zookeeper服务器启动期间，首先会进行数据初始化工作，用于将存储在磁盘上的数据文件加载到Zookeeper服务器内存中。</p>
+<ul>
+<li><p>单点启动时的数据初始化<br><img src="/2019/09/28/zookeeper数据存储/dd.jpg" alt="zk启动初始化流程图" title="zk启动初始化流程图"></p>
 </li>
-</ol>
-<a id="more"></a>
-<p>打开的配置文件,并配置数据文件夹，日志文件夹，如下图所示:</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> The number of milliseconds of each tick</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> zookeeper 定义的基准时间间隔，单位：毫秒</span></span><br><span class="line">   tickTime=2000</span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> The number of ticks that the initial </span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> synchronization phase can take</span></span><br><span class="line">   initLimit=10</span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> The number of ticks that can pass between </span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> sending a request and getting an acknowledgement</span></span><br><span class="line">   syncLimit=5</span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> the directory <span class="hljs-built_in">where</span> the snapshot is stored.</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> <span class="hljs-keyword">do</span> not use /tmp <span class="hljs-keyword">for</span> storage, /tmp here is just </span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> example sakes.</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> dataDir=/tmp/zookeeper</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> 数据文件夹 需要提前创建</span></span><br><span class="line">   dataDir=/usr/local/zookeeper/data</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> 日志文件夹 需要提前创建</span></span><br><span class="line">   dataLogDir=/usr/local/zookeeper/log</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> the port at <span class="hljs-built_in">which</span> the clients will connect</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> 客户端访问 zookeeper 的端口号</span></span><br><span class="line">   clientPort=2181</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> the maximum number of client connections.</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> increase this <span class="hljs-keyword">if</span> you need to handle more clients</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash">maxClientCnxns=60</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"></span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> Be sure to <span class="hljs-built_in">read</span> the maintenance section of the </span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> administrator guide before turning on autopurge.</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"></span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> http://zookeeper.apache.org/doc/current/zookeeperAdmin.html<span class="hljs-comment">#sc_maintenance</span></span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"></span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> The number of snapshots to retain <span class="hljs-keyword">in</span> dataDir</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash">autopurge.snapRetainCount=3</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> Purge task interval <span class="hljs-keyword">in</span> hours</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> Set to <span class="hljs-string">"0"</span> to <span class="hljs-built_in">disable</span> auto purge feature</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash">autopurge.purgeInterval=1</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>设置环境变量：<br>用 vim 打开 /etc/ 目录下的配置文件 profile：<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> vim /etc/profile</span></span><br></pre></td></tr></table></figure>
-
+<li><p>集群间的数据同步<br>&emsp;&emsp;整个集群完成Leader选举后，Learner会向Leader进行注册，当Learner向Leader完成注册后，就进入数据同步环节，同步过程就是Leader将那些没有在Learner服务器上提交过的事务请求同步给Learner服务器，大体过程如下：<br><img src="/2019/09/28/zookeeper数据存储/cc.jpg" alt="zk集群数据同步流程图" title="zk集群数据同步流程图"></p>
 </li>
-</ol>
-<p>打开后追加如下内容：</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> idea - zookeeper-3.4.10 config start - 2018-09-06</span></span><br><span class="line">export ZOOKEEPER_HOME=/usr/local/zookeeper/zookeeper-3.4.10/</span><br><span class="line">export PATH=$ZOOKEEPER_HOME/bin:$PATH</span><br><span class="line">export PATH</span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> idea - zookeeper-3.4.10 config start - 2018-09-06</span></span><br></pre></td></tr></table></figure>
-
-<p>保存并执行如下命令进行配置刷新：</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> <span class="hljs-built_in">source</span> /etc/profile</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="检验是否安装成功"><a href="#检验是否安装成功" class="headerlink" title="检验是否安装成功"></a>检验是否安装成功</h3><p>按照以上步骤进行安装完毕后，依次执行以下命令检验是否安装成功：</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> <span class="hljs-built_in">cd</span> /usr/<span class="hljs-built_in">local</span>/services/zookeeper/zookeeper-3.4.10/bin</span></span><br><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ./zkServer.sh start</span></span><br></pre></td></tr></table></figure>
-
-<p>若显示如下，说明安装成功：</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ZooKeeper JMX enabled by default</span><br><span class="line">Using config: /usr/local/services/zookeeper/zookeeper-3.4.9/bin/../conf/zoo.cfg</span><br><span class="line">Starting zookeeper ... STARTED</span><br></pre></td></tr></table></figure>
-
-<h3 id="启停zookeeper服务"><a href="#启停zookeeper服务" class="headerlink" title="启停zookeeper服务"></a>启停zookeeper服务</h3><p>查询状态：</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ./zkServer.sh status</span></span><br></pre></td></tr></table></figure>
-
-<p>开启服务：</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ./ zkServer.sh start</span></span><br></pre></td></tr></table></figure>
-
-<p>关闭服务：</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ./ zkServer.sh stop</span></span><br></pre></td></tr></table></figure>
-
-<p>重启服务：</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ./ zkServer.sh restart</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="zookeeper-cli命令行补充"><a href="#zookeeper-cli命令行补充" class="headerlink" title="zookeeper-cli命令行补充"></a>zookeeper-cli命令行补充</h3><ol>
-<li><p>连接zk：</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ./ zkCli.sh -server 127.0.0.1:2181</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>显示根目录下文件</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ls /      <span class="hljs-comment">#查看当前节点数据</span></span></span><br><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ls2 /     <span class="hljs-comment">#查看当前节点数据，可以看到更新次数等数据</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建文件</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> create /config <span class="hljs-string">"test"</span>     <span class="hljs-comment">#创建一个新的节点并设置关联值</span></span></span><br><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> create /config <span class="hljs-string">""</span>         <span class="hljs-comment">#创建一个新的空节点</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>获取/设置文件内容</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> get /brokers              <span class="hljs-comment">#获取节点内容</span></span></span><br><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> <span class="hljs-built_in">set</span> /zk <span class="hljs-string">"zkData"</span>          <span class="hljs-comment">#设置zk文件内容</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除文件</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> delete /brokers           <span class="hljs-comment">#删除节点</span></span></span><br><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> rmr    /brokers           <span class="hljs-comment">#删除节点及子节点</span></span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<hr>
-<p>到此为止zookeeper服务已经安装完毕，请开始zookeeper分布式注册之旅吧…[手工笑脸]</p>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>&emsp;&emsp;理解了zk的存储数据的方式，再进行数据恢复就简单多了，只要找到了原zk的快照文件以及日志文件，放到新zk相应的目录下，重启就可以实现数据同步了。so easy~~</p>
 
         </div>
         
@@ -265,17 +216,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/09/28/zookeeper数据存储/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">zookeeper数据存储</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/22/hello-world/">
-                <span class="level-item">Hello World</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/24/zookeeper安装步骤/">
+                <span class="level-item">zookeeper在CentOS7上的安装步骤</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -680,7 +624,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.jpg" alt="zookeeper在CentOS7上的安装步骤" height="28">
+                    <img src="/images/logo.jpg" alt="zookeeper数据存储" height="28">
                 
                 </a>
                 <p class="is-size-7">
