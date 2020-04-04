@@ -7,23 +7,23 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>zookeeper在CentOS7上的安装步骤 - Aissue</title>
+<title>竟然忘记怎么发布文章了... - Aissue</title>
 
 
-    <meta name="description" content="准备工作下载 zookeeper-3.4.10.tar.gz，传送带===&amp;gt;zookeeper-3.4.10(ps：其他版本按照同样的安装步骤进行即可)">
-<meta name="keywords" content="zookeeper">
+    <meta name="description" content="&amp;emsp;竟然忘记了怎么发布文章…好尴尬。这篇随笔就是试试看看能不能成功发布吧。">
+<meta name="keywords" content="尴尬">
 <meta property="og:type" content="article">
-<meta property="og:title" content="zookeeper在CentOS7上的安装步骤">
-<meta property="og:url" content="http://yoursite.com/2019/09/24/zookeeper安装步骤/index.html">
+<meta property="og:title" content="竟然忘记怎么发布文章了...">
+<meta property="og:url" content="http://yoursite.com/2020/04/04/竟然忘记怎么发布文章了/index.html">
 <meta property="og:site_name" content="Aissue">
-<meta property="og:description" content="准备工作下载 zookeeper-3.4.10.tar.gz，传送带===&amp;gt;zookeeper-3.4.10(ps：其他版本按照同样的安装步骤进行即可)">
+<meta property="og:description" content="&amp;emsp;竟然忘记了怎么发布文章…好尴尬。这篇随笔就是试试看看能不能成功发布吧。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/thumbnails/fish.jpg">
-<meta property="og:updated_time" content="2019-09-28T05:49:35.481Z">
+<meta property="og:image" content="http://yoursite.com/thumbnails/fengjing.jpg">
+<meta property="og:updated_time" content="2020-04-04T14:09:46.941Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zookeeper在CentOS7上的安装步骤">
-<meta name="twitter:description" content="准备工作下载 zookeeper-3.4.10.tar.gz，传送带===&amp;gt;zookeeper-3.4.10(ps：其他版本按照同样的安装步骤进行即可)">
-<meta name="twitter:image" content="http://yoursite.com/thumbnails/fish.jpg">
+<meta name="twitter:title" content="竟然忘记怎么发布文章了...">
+<meta name="twitter:description" content="&amp;emsp;竟然忘记了怎么发布文章…好尴尬。这篇随笔就是试试看看能不能成功发布吧。">
+<meta name="twitter:image" content="http://yoursite.com/thumbnails/fengjing.jpg">
 
 
 
@@ -97,7 +97,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.jpg" alt="zookeeper在CentOS7上的安装步骤" height="28">
+                <img src="/images/logo.jpg" alt="竟然忘记怎么发布文章了..." height="28">
             
             </a>
         </div>
@@ -139,7 +139,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/thumbnails/fish.jpg" alt="zookeeper在CentOS7上的安装步骤">
+            <img class="thumbnail" src="/thumbnails/fengjing.jpg" alt="竟然忘记怎么发布文章了...">
         </span>
     </div>
     
@@ -147,17 +147,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-09-24T07:25:15.332Z">2019-09-24</time>
+                <time class="level-item has-text-grey" datetime="2020-04-04T14:09:46.941Z">2020-04-04</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/中间件/">中间件</a>
+                <a class="has-link-grey -link" href="/categories/随笔/">随笔</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    5 分钟 读完 (大约 703 个字)
+                    几秒 读完 (大约 35 个字)
                 </span>
                 
                 
@@ -171,76 +171,11 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                zookeeper在CentOS7上的安装步骤
+                竟然忘记怎么发布文章了...
             
         </h1>
         <div class="content">
-            <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>下载 zookeeper-3.4.10.tar.gz，传送带===&gt;<a href="http://apache.fayea.com/zookeeper/" title="zookeeper-3.4.10" target="_blank" rel="noopener">zookeeper-3.4.10</a><br>(ps：其他版本按照同样的安装步骤进行即可)</p>
-<a id="more"></a>
-<h3 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h3><ol>
-<li><p>创建安装目录：</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir -p /usr/<span class="hljs-built_in">local</span>/zookeeper</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将安装包放到步骤1创建的目录下，并解压：</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar -zxvf zookeeper-3.4.10.tar.gz</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>进入配置文件目录，并依次执行以下shell命令行：</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">cd</span> zookeeper-3.4.10/conf/</span><br><span class="line">$ cp zoo_sample.cfg zoo.cfg</span><br><span class="line">$ vim zoo.cfg</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>打开的配置文件,并配置数据文件夹，日志文件夹，如下图所示:</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> The number of milliseconds of each tick</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> zookeeper 定义的基准时间间隔，单位：毫秒</span></span><br><span class="line">   tickTime=2000</span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> The number of ticks that the initial </span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> synchronization phase can take</span></span><br><span class="line">   initLimit=10</span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> The number of ticks that can pass between </span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> sending a request and getting an acknowledgement</span></span><br><span class="line">   syncLimit=5</span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> the directory <span class="hljs-built_in">where</span> the snapshot is stored.</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> <span class="hljs-keyword">do</span> not use /tmp <span class="hljs-keyword">for</span> storage, /tmp here is just </span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> example sakes.</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> dataDir=/tmp/zookeeper</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> 数据文件夹 需要提前创建</span></span><br><span class="line">   dataDir=/usr/local/zookeeper/data</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> 日志文件夹 需要提前创建</span></span><br><span class="line">   dataLogDir=/usr/local/zookeeper/log</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> the port at <span class="hljs-built_in">which</span> the clients will connect</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> 客户端访问 zookeeper 的端口号</span></span><br><span class="line">   clientPort=2181</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> the maximum number of client connections.</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> increase this <span class="hljs-keyword">if</span> you need to handle more clients</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash">maxClientCnxns=60</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"></span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> Be sure to <span class="hljs-built_in">read</span> the maintenance section of the </span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> administrator guide before turning on autopurge.</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"></span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> http://zookeeper.apache.org/doc/current/zookeeperAdmin.html<span class="hljs-comment">#sc_maintenance</span></span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"></span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> The number of snapshots to retain <span class="hljs-keyword">in</span> dataDir</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash">autopurge.snapRetainCount=3</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> Purge task interval <span class="hljs-keyword">in</span> hours</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash"> Set to <span class="hljs-string">"0"</span> to <span class="hljs-built_in">disable</span> auto purge feature</span></span><br><span class="line"><span class="hljs-meta">   #</span><span class="hljs-bash">autopurge.purgeInterval=1</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>设置环境变量：<br>用 vim 打开 /etc/ 目录下的配置文件 profile：<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> vim /etc/profile</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>打开后追加如下内容：</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> idea - zookeeper-3.4.10 config start - 2018-09-06</span></span><br><span class="line">export ZOOKEEPER_HOME=/usr/local/zookeeper/zookeeper-3.4.10/</span><br><span class="line">export PATH=$ZOOKEEPER_HOME/bin:$PATH</span><br><span class="line">export PATH</span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> idea - zookeeper-3.4.10 config start - 2018-09-06</span></span><br></pre></td></tr></table></figure>
-
-<p>保存并执行如下命令进行配置刷新：</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> <span class="hljs-built_in">source</span> /etc/profile</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="检验是否安装成功"><a href="#检验是否安装成功" class="headerlink" title="检验是否安装成功"></a>检验是否安装成功</h3><p>按照以上步骤进行安装完毕后，依次执行以下命令检验是否安装成功：</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> <span class="hljs-built_in">cd</span> /usr/<span class="hljs-built_in">local</span>/services/zookeeper/zookeeper-3.4.10/bin</span></span><br><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ./zkServer.sh start</span></span><br></pre></td></tr></table></figure>
-
-<p>若显示如下，说明安装成功：</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ZooKeeper JMX enabled by default</span><br><span class="line">Using config: /usr/local/services/zookeeper/zookeeper-3.4.9/bin/../conf/zoo.cfg</span><br><span class="line">Starting zookeeper ... STARTED</span><br></pre></td></tr></table></figure>
-
-<h3 id="启停zookeeper服务"><a href="#启停zookeeper服务" class="headerlink" title="启停zookeeper服务"></a>启停zookeeper服务</h3><p>查询状态：</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ./zkServer.sh status</span></span><br></pre></td></tr></table></figure>
-
-<p>开启服务：</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ./ zkServer.sh start</span></span><br></pre></td></tr></table></figure>
-
-<p>关闭服务：</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ./ zkServer.sh stop</span></span><br></pre></td></tr></table></figure>
-
-<p>重启服务：</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ./ zkServer.sh restart</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="zookeeper-cli命令行补充"><a href="#zookeeper-cli命令行补充" class="headerlink" title="zookeeper-cli命令行补充"></a>zookeeper-cli命令行补充</h3><ol>
-<li><p>连接zk：</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ./ zkCli.sh -server 127.0.0.1:2181</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>显示根目录下文件</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ls /      <span class="hljs-comment">#查看当前节点数据</span></span></span><br><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> ls2 /     <span class="hljs-comment">#查看当前节点数据，可以看到更新次数等数据</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建文件</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> create /config <span class="hljs-string">"test"</span>     <span class="hljs-comment">#创建一个新的节点并设置关联值</span></span></span><br><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> create /config <span class="hljs-string">""</span>         <span class="hljs-comment">#创建一个新的空节点</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>获取/设置文件内容</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> get /brokers              <span class="hljs-comment">#获取节点内容</span></span></span><br><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> <span class="hljs-built_in">set</span> /zk <span class="hljs-string">"zkData"</span>          <span class="hljs-comment">#设置zk文件内容</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除文件</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> delete /brokers           <span class="hljs-comment">#删除节点</span></span></span><br><span class="line"><span class="hljs-meta">$</span><span class="hljs-bash"> rmr    /brokers           <span class="hljs-comment">#删除节点及子节点</span></span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<hr>
-<p>到此为止zookeeper服务已经安装完毕，请开始zookeeper分布式注册之旅吧…[手工笑脸]</p>
+            <p>&emsp;竟然忘记了怎么发布文章…好尴尬。这篇随笔就是试试看看能不能成功发布吧。</p>
 
         </div>
         
@@ -248,7 +183,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/zookeeper/">zookeeper</a>
+                    <a class="has-link-grey -link" href="/tags/尴尬/">尴尬</a>
                 </div>
             </div>
         </div>
@@ -265,17 +200,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/09/28/zookeeper数据存储/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">zookeeper数据存储</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/22/hello-world/">
-                <span class="level-item">Hello World</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/28/zookeeper数据存储/">
+                <span class="level-item">zookeeper数据存储</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -762,7 +690,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.jpg" alt="zookeeper在CentOS7上的安装步骤" height="28">
+                    <img src="/images/logo.jpg" alt="竟然忘记怎么发布文章了..." height="28">
                 
                 </a>
                 <p class="is-size-7">
